@@ -5,6 +5,27 @@ Color blueGrey = Colors.blueGrey;
 Color white = Colors.white;
 Color black = Colors.black;
 Color orange = Colors.orange;
-
-
-// test commit
+const String mc = 'mc';
+const String mPlus = 'm+';
+const String mMinus = 'm-';
+const String mr = 'mr';
+const String ac = 'AC';
+const String leftArrow = '<-';
+const String plusMinus = '+/-';
+const String divide = '/';
+const String nine = '9';
+const String eight = '8';
+const String seven = '7';
+const String six = '6';
+const String five = '5';
+const String four = '4';
+const String three = '3';
+const String two = '2';
+const String one = '1';
+const String zero = '0';
+const String multiply = 'X';
+const String minus = '-';
+const String plus = '+';
+const String percentage = '%';
+const String decimal = '.';
+const String equal = '=';

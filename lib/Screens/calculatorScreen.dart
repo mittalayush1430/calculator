@@ -32,22 +32,22 @@ class CalculatorScreen extends StatelessWidget {
               child: Row(
                 children: [
                   BaseButtonTemplate(
-                    text: 'mc',
+                    text: mc,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: 'm+',
+                    text: mPlus,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: 'm-',
+                    text: mMinus,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: 'mr',
+                    text: mr,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
@@ -58,48 +58,22 @@ class CalculatorScreen extends StatelessWidget {
               child: Row(
                 children: [
                   BaseButtonTemplate(
-                    text: 'AC',
+                    text: ac,
                     buttonColor: blueGreyShade900,
                     textColor: orange,
                   ),
                   BaseButtonTemplate(
-                    text: '<-',
+                    text: leftArrow,
                     buttonColor: blueGreyShade900,
                     textColor: orange,
                   ),
                   BaseButtonTemplate(
-                    text: '+/-',
+                    text: plusMinus,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '/',
-                    buttonColor: blueGreyShade900,
-                    textColor: white,
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  BaseButtonTemplate(
-                    text: '7',
-                    buttonColor: blueGrey,
-                    textColor: white,
-                  ),
-                  BaseButtonTemplate(
-                    text: '8',
-                    buttonColor: blueGrey,
-                    textColor: white,
-                  ),
-                  BaseButtonTemplate(
-                    text: '9',
-                    buttonColor: blueGrey,
-                    textColor: white,
-                  ),
-                  BaseButtonTemplate(
-                    text: 'X',
+                    text: divide,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
@@ -110,22 +84,22 @@ class CalculatorScreen extends StatelessWidget {
               child: Row(
                 children: [
                   BaseButtonTemplate(
-                    text: '4',
+                    text: seven,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '5',
+                    text: eight,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '6',
+                    text: nine,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '-',
+                    text: multiply,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
@@ -136,22 +110,22 @@ class CalculatorScreen extends StatelessWidget {
               child: Row(
                 children: [
                   BaseButtonTemplate(
-                    text: '1',
+                    text: four,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '2',
+                    text: five,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '3',
+                    text: six,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '+',
+                    text: minus,
                     buttonColor: blueGreyShade900,
                     textColor: white,
                   ),
@@ -162,22 +136,48 @@ class CalculatorScreen extends StatelessWidget {
               child: Row(
                 children: [
                   BaseButtonTemplate(
-                    text: '%',
+                    text: one,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '0',
+                    text: two,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '.',
+                    text: three,
                     buttonColor: blueGrey,
                     textColor: white,
                   ),
                   BaseButtonTemplate(
-                    text: '=',
+                    text: plus,
+                    buttonColor: blueGreyShade900,
+                    textColor: white,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  BaseButtonTemplate(
+                    text: percentage,
+                    buttonColor: blueGrey,
+                    textColor: white,
+                  ),
+                  BaseButtonTemplate(
+                    text: zero,
+                    buttonColor: blueGrey,
+                    textColor: white,
+                  ),
+                  BaseButtonTemplate(
+                    text: decimal,
+                    buttonColor: blueGrey,
+                    textColor: white,
+                  ),
+                  BaseButtonTemplate(
+                    text: equal,
                     buttonColor: orange,
                     textColor: white,
                   ),

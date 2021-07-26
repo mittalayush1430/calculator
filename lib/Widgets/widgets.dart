@@ -7,10 +7,11 @@ class ResultBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String resultBarText = '';
     return Expanded(
       child: Container(
         child: Text(
-          '0987653456789',
+          resultBarText,
           textAlign: TextAlign.end,
           style: TextStyle(color: Colors.grey, fontSize: 40.0),
         ),
@@ -38,7 +39,9 @@ class BaseButtonTemplate extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(3.0),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            print('pressed');
+          },
           child: Center(
             child: Text(
               text,

@@ -29,3 +29,4 @@ const String plus = '+';
 const String percentage = '%';
 const String decimal = '.';
 const String equal = '=';
+String resultBarText = '';

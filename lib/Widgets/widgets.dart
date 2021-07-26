@@ -31,7 +31,6 @@ class BaseButtonTemplate extends StatefulWidget {
     required this.text,
     required this.buttonColor,
     required this.textColor,
-    // required this.onPressed,
   }) : super(key: key);
   final String text;
   final Color buttonColor;
@@ -43,10 +42,7 @@ class BaseButtonTemplate extends StatefulWidget {
 
 class _BaseButtonTemplateState extends State<BaseButtonTemplate> {
   void reflectToResultBar() {
-    // resultBarText = ValueGetter;
-    print('popla1');
-    print(resultBarText);
-    print('popla3');
+    resultBarText = '3';
   }
 
   @override
@@ -56,9 +52,9 @@ class _BaseButtonTemplateState extends State<BaseButtonTemplate> {
         padding: EdgeInsets.all(3.0),
         child: TextButton(
           onPressed: () {
-            print('popla12');
-            reflectToResultBar();
-            print('popla');
+            setState(() {
+              reflectToResultBar();
+            });
           },
           child: Center(
             child: Text(

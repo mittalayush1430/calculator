@@ -44,6 +44,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           ),
           Expanded(
             child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 24,
               gridDelegate:
                   SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),

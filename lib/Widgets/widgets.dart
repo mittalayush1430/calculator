@@ -1,22 +1,16 @@
 import 'package:calculator/Utilities/constants.dart';
 import 'package:flutter/material.dart';
 
-class ResultBar extends StatefulWidget {
-  const ResultBar({
-    Key? key,
-  }) : super(key: key);
+class ResultBar extends StatelessWidget {
+  const ResultBar({Key? key, required this.text}) : super(key: key);
+  final String text;
 
-  @override
-  _ResultBarState createState() => _ResultBarState();
-}
-
-class _ResultBarState extends State<ResultBar> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
         child: Text(
-          resultBarText,
+          text,
           textAlign: TextAlign.end,
           style: TextStyle(color: Colors.grey, fontSize: 40.0),
         ),
@@ -25,25 +19,18 @@ class _ResultBarState extends State<ResultBar> {
   }
 }
 
-class BaseButtonTemplate extends StatefulWidget {
+class BaseButtonTemplate extends StatelessWidget {
   const BaseButtonTemplate({
     Key? key,
     required this.text,
     required this.buttonColor,
     required this.textColor,
+    required this.callBack,
   }) : super(key: key);
   final String text;
   final Color buttonColor;
   final Color textColor;
-
-  @override
-  _BaseButtonTemplateState createState() => _BaseButtonTemplateState();
-}
-
-class _BaseButtonTemplateState extends State<BaseButtonTemplate> {
-  void reflectToResultBar() {
-    resultBarText = '3';
-  }
+  final Function(String text) callBack;
 
   @override
   Widget build(BuildContext context) {
@@ -52,21 +39,19 @@ class _BaseButtonTemplateState extends State<BaseButtonTemplate> {
         padding: EdgeInsets.all(3.0),
         child: TextButton(
           onPressed: () {
-            setState(() {
-              reflectToResultBar();
-            });
+            callBack(text);
           },
           child: Center(
             child: Text(
-              widget.text,
+              text,
               style: TextStyle(
-                color: widget.textColor,
+                color: textColor,
                 fontSize: 25.0,
               ),
             ),
           ),
           style: TextButton.styleFrom(
-            backgroundColor: widget.buttonColor,
+            backgroundColor: buttonColor,
             primary: Colors.white,
           ),
         ),

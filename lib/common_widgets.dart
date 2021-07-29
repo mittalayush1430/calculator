@@ -1,22 +1,5 @@
 import 'package:flutter/material.dart';
 
-class ResultBar extends StatelessWidget {
-  const ResultBar({Key? key, required this.text}) : super(key: key);
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      child: Text(
-        text,
-        textAlign: TextAlign.end,
-        style: TextStyle(color: Colors.grey, fontSize: 40.0),
-      ),
-    );
-  }
-}
-
 class BaseButtonTemplate extends StatelessWidget {
   const BaseButtonTemplate({
     Key? key,
@@ -33,11 +16,13 @@ class BaseButtonTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(3.0),
       child: TextButton(
-        onPressed: () {
-          callBack(text);
-        },
+        onPressed: () => callBack(text),
+        style: TextButton.styleFrom(
+          backgroundColor: buttonColor,
+          primary: Colors.white,
+        ),
         child: Center(
           child: Text(
             text,
@@ -46,10 +31,6 @@ class BaseButtonTemplate extends StatelessWidget {
               fontSize: 25.0,
             ),
           ),
-        ),
-        style: TextButton.styleFrom(
-          backgroundColor: buttonColor,
-          primary: Colors.white,
         ),
       ),
     );

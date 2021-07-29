@@ -26,6 +26,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       setState(() {
         text = eval.toInt().toString();
       });
+    } else if (value == '<-') {
+      setState(() {});
     } else {
       setState(() {
         text += value;
@@ -37,29 +39,38 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: black,
-      body: Column(
-        children: [
-          ResultBar(
-            text: text,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        child: Expanded(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                height: 50.0,
+                child: ResultBar(
+                  text: text,
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height - 50,
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: buttonList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4),
+                  itemBuilder: (context, index) {
+                    return BaseButtonTemplate(
+                      text: buttonList[index],
+                      buttonColor: blueGreyShade900,
+                      textColor: white,
+                      callBack: (text) => updateScreen(text),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: GridView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 24,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-              itemBuilder: (context, index) {
-                return BaseButtonTemplate(
-                  text: buttonList[index],
-                  buttonColor: blueGreyShade900,
-                  textColor: white,
-                  callBack: (text) => updateScreen(text),
-                );
-              },
-            ),
-          ),
-          SizedBox(height: 3.0),
-        ],
+        ),
       ),
     );
   }

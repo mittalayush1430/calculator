@@ -59,6 +59,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       body: Column(
         children: [
           Expanded(
+            flex: 3,
             child: Container(
               alignment: Alignment.bottomRight,
               color: Colors.black,
@@ -73,7 +74,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 7,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemCount: buttonModelList.length,

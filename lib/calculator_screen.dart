@@ -76,14 +76,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             flex: 3,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: buttonList.length,
+              itemCount: buttonModelList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
               ),
               itemBuilder: (context, index) {
+                final button = buttonModelList[index];
                 return BaseButtonTemplate(
-                  text: buttonList[index],
-                  buttonColor: blueGreyShade900,
+                  text: button.text,
+                  buttonColor: button.color,
                   textColor: white,
                   callBack: updateScreen,
                 );

@@ -20,7 +20,7 @@ const List<String> buttonList = [
   '2',
   '1',
   '0',
-  'X',
+  'x',
   '+',
   '-',
   '%',

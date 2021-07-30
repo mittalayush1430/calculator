@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
-
 import 'common_widgets.dart';
 import 'constants.dart';
 
@@ -19,9 +18,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     } else if (value == '=') {
       final parser = Parser();
       final cm = ContextModel();
+      if (text.contains("%")) {
+        text = text.replaceAll('%', '/100');
+      }
       final exp = parser.parse(text);
-      final eval = (exp.evaluate(EvaluationType.REAL, cm) as num).toDouble();
+      // final exp = parser.parse(text);
+      final eval = exp.evaluate(EvaluationType.REAL, cm);
       setState(() => text = eval.toInt().toString());
+    } else if (value == '<-' && text != '') {
+      setState(() => text = text.substring(0, text.length - 1));
     } else {
       setState(() => text += value);
     }
@@ -35,6 +40,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         children: [
           Expanded(
             child: Container(
+              alignment: Alignment.bottomRight,
               color: Colors.black,
               child: Text(
                 text,

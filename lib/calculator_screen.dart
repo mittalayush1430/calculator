@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'common_widgets.dart';
@@ -12,23 +14,41 @@ class CalculatorScreen extends StatefulWidget {
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
   String text = '';
+  bool isError = false;
   void updateScreen(String value) {
-    if (value == 'AC') {
-      setState(() => text = '');
-    } else if (value == '=') {
-      final parser = Parser();
-      final cm = ContextModel();
-      if (text.contains("%")) {
-        text = text.replaceAll('%', '/100');
+    try {
+      if (value == 'AC') {
+        setState(() => text = '');
+      } else if (value == '=') {
+        final parser = Parser();
+        final cm = ContextModel();
+        if (text.contains("%")) {
+          text = text.replaceAll('%', '/100');
+        }
+        if (text.contains("x")) {
+          text = text.replaceAll('x', '*');
+        }
+        final exp = parser.parse(text);
+        final eval = exp.evaluate(EvaluationType.REAL, cm);
+        setState(() => text = eval.toInt().toString());
+      } else if (value == '<-' && text != '') {
+        setState(() => text = text.substring(0, text.length - 1));
+      } else {
+        if (isError) {
+          setState(() {
+            text = "";
+            isError = false;
+          });
+        }
+        setState(() => text += value);
       }
-      final exp = parser.parse(text);
-      // final exp = parser.parse(text);
-      final eval = exp.evaluate(EvaluationType.REAL, cm);
-      setState(() => text = eval.toInt().toString());
-    } else if (value == '<-' && text != '') {
-      setState(() => text = text.substring(0, text.length - 1));
-    } else {
-      setState(() => text += value);
+    } catch (e) {
+      debugPrint("Error Occured $e");
+      final r = Random();
+      setState(() {
+        text = errorList[r.nextInt(errorList.length)];
+        isError = true;
+      });
     }
   }
 

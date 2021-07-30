@@ -27,3 +27,12 @@ const List<String> buttonList = [
   '.',
   '='
 ];
+
+const List<String> errorList = [
+  "Mere muh se nikal gyi!!",
+  "Sorry Bhaiya!",
+  "OK REPORT",
+  "Kya hua BUDDY ?",
+  "Beta tumse na ho payega!",
+  "Kya karun main mar jaun ?",
+];

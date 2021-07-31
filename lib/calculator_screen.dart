@@ -57,8 +57,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     return Scaffold(
       backgroundColor: black,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
+            flex: 3,
             child: Container(
               alignment: Alignment.bottomRight,
               color: Colors.black,
@@ -73,17 +75,18 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 7,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: buttonList.length,
+              itemCount: buttonModelList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
               ),
               itemBuilder: (context, index) {
+                final button = buttonModelList[index];
                 return BaseButtonTemplate(
-                  text: buttonList[index],
-                  buttonColor: blueGreyShade900,
+                  text: button.text,
+                  buttonColor: button.color,
                   textColor: white,
                   callBack: updateScreen,
                 );

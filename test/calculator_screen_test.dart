@@ -2,8 +2,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 void main() {
-  final parser = Parser();
-  final cm = ContextModel();
+  late Parser parser;
+  late ContextModel cm;
+
+  setUpAll(() {
+    parser = Parser();
+    cm = ContextModel();
+  });
+
   group('Division Tests', () {
     test('Divide 10 by 2 is equal to 5', () {
       final exp = parser.parse('10/2');
@@ -22,6 +28,13 @@ void main() {
       final exp = parser.parse('1+1');
       final eval = exp.evaluate(EvaluationType.REAL, cm);
       expect(eval, 2);
+    });
+
+    test('Return type of addition operation', () {
+      final exp = parser.parse('4.0+3.2');
+      final eval = exp.evaluate(EvaluationType.REAL, cm).toInt();
+      expect(eval, 7);
+      expect(eval, isA<int>());
     });
   });
   group("Subtraction Tests", () {

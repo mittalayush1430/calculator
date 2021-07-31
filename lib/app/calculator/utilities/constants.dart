@@ -1,10 +1,7 @@
-import 'package:calculator/data/model/button_model.dart';
+import 'package:calculator/app/calculator/data/model/button_model.dart';
+import 'package:calculator/app/calculator/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-Color blueGrey = Colors.blueGrey;
-Color white = Colors.white;
-Color black = Colors.black;
-Color orange = Colors.orange;
 const List<String> buttonList = [
   'AC',
   '<-',
@@ -25,7 +22,7 @@ const List<String> buttonList = [
   '+/-',
   '0',
   '.',
-  '='
+  '=',
 ];
 
 const List<String> errorList = [
@@ -39,7 +36,10 @@ const List<String> errorList = [
 
 List<ButtonModel> buttonModelList = buttonList.map((text) {
   if (['='].contains(text)) {
-    return ButtonModel(text: text, color: orange);
+    return ButtonModel(
+      text: text,
+      color: MyColors.orange,
+    );
   } else if (![
     '1',
     '2',

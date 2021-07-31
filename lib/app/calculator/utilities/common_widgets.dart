@@ -1,24 +1,25 @@
+import 'package:calculator/app/calculator/logic/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BaseButtonTemplate extends StatelessWidget {
+class BaseButtonTemplate extends ConsumerWidget {
   const BaseButtonTemplate({
     Key? key,
     required this.text,
     required this.buttonColor,
     required this.textColor,
-    required this.callBack,
   }) : super(key: key);
   final String text;
   final Color buttonColor;
   final Color textColor;
-  final Function(String text) callBack;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
     return Container(
       padding: const EdgeInsets.all(3.0),
       child: TextButton(
-        onPressed: () => callBack(text),
+        onPressed: () =>
+            context.read(resultTextProvider.notifier).updateString(text),
         style: TextButton.styleFrom(
           backgroundColor: buttonColor,
           primary: Colors.white,

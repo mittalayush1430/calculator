@@ -1,3 +1,5 @@
+import 'package:calculator/app/calculator/utilities/common_widgets.dart';
+import 'package:calculator/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -74,5 +76,15 @@ void main() {
         expect(eval, 15);
       }
     });
+  });
+
+  group('Test Widgets', () {
+    testWidgets(
+      'Renders exactly 24 Calculator Buttons on Screen',
+      (WidgetTester tester) async {
+        await tester.pumpWidget(const Calculator());
+        expect(find.byType(BaseButtonTemplate), findsNWidgets(20));
+      },
+    );
   });
 }

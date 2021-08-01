@@ -1,7 +1,8 @@
-import 'package:calculator/app/calculator/logic/providers.dart';
-import 'package:calculator/app/calculator/presentation/theme/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../logic/providers.dart';
+import '../theme/styles.dart';
 
 class ResultText extends ConsumerWidget {
   const ResultText({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class ResultText extends ConsumerWidget {
         color: Colors.black,
         child: Text(
           resultText,
+          key: const ValueKey('Result Text'),
           textAlign: TextAlign.end,
           style: resultTextStyle,
         ),

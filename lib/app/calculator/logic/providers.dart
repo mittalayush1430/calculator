@@ -1,9 +1,10 @@
 import 'dart:math';
 
-import 'package:calculator/app/calculator/utilities/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:math_expressions/math_expressions.dart';
+
+import '../utilities/constants.dart';
 
 final resultTextProvider = StateNotifierProvider<ResultTextNotifier, String>(
   (ref) => ResultTextNotifier(

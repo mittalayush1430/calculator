@@ -1,6 +1,7 @@
-import 'package:calculator/app/calculator/data/model/button_model.dart';
-import 'package:calculator/app/calculator/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../data/model/button_model.dart';
+import '../presentation/theme/colors.dart';
 
 const List<String> buttonList = [
   'AC',
@@ -59,6 +60,5 @@ List<ButtonModel> buttonModelList = buttonList.map((text) {
       color: Colors.blueGrey.shade900,
     );
   }
-
   return ButtonModel(text: text);
 }).toList();

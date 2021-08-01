@@ -1,3 +1,13 @@
 import 'package:flutter/material.dart';
 
-const resultTextStyle = TextStyle(color: Colors.grey, fontSize: 40.0);
+import 'colors.dart';
+
+const resultTextStyle = TextStyle(
+  color: MyColors.blueGrey,
+  fontSize: 40.0,
+);
+
+const buttonTextStyle = TextStyle(
+  color: MyColors.white,
+  fontSize: 25.0,
+);

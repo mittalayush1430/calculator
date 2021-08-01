@@ -1,6 +1,7 @@
-import 'package:calculator/app/calculator/presentation/screens/calculator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'app/calculator/presentation/screens/calculator_screen.dart';
 
 void main() => runApp(const ProviderScope(child: Calculator()));
 

@@ -1,7 +1,8 @@
-import 'package:calculator/app/calculator/presentation/theme/colors.dart';
-import 'package:calculator/app/calculator/presentation/widgets/button_grid.dart';
-import 'package:calculator/app/calculator/presentation/widgets/result_text.dart';
 import 'package:flutter/material.dart';
+
+import '../theme/colors.dart';
+import '../widgets/button_grid.dart';
+import '../widgets/result_text.dart';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({Key? key}) : super(key: key);
@@ -11,11 +12,12 @@ class CalculatorScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyColors.black,
       body: SizedBox(
+        // width: MediaQuery.of(context).size.width,
+        width: 300,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
             ResultText(),
-            ButtonGrid(),
+            Expanded(flex: 7, child: ButtonGrid()),
           ],
         ),
       ),
